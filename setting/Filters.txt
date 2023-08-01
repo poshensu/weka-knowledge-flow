@@ -1,0 +1,38 @@
+1.Resample
+{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.supervised.instance.Resample",
+					"options" : "-B 0.0 -S 1 -Z 100.0"
+				},
+				"name" : "Resample"
+			},
+			"connections" : {
+			},
+			"coordinates" : "724,409"
+		}
+
+2.Normalize
+{
+			"class" : "weka.knowledgeflow.steps.Filter",
+			"properties" : {
+				"filter" : {
+					"type" : "optionHandler",
+					"class" : "weka.filters.unsupervised.attribute.Normalize",
+					"options" : "-S 1.0 -T 0.0"
+				},
+				"name" : "Normalize"
+			},
+			"connections" : {
+				"trainingSet" : [
+					"TextViewer2"
+				],
+				"testSet" : [
+					"TextViewer2"
+				]
+			},
+			"coordinates" : "785,645"
+		}
+

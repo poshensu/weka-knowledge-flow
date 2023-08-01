@@ -1,0 +1,50 @@
+1.SimpleKMeans
+{
+			"class" : "weka.knowledgeflow.steps.Clusterer",
+			"properties" : {
+				"clusterer" : {
+					"type" : "optionHandler",
+					"class" : "weka.clusterers.SimpleKMeans",
+					"options" : "-init 0 -max-candidates 100 -periodic-pruning 10000 -min-density 2.0 -t1 -1.25 -t2 -1.0 -N 2 -A \"weka.core.EuclideanDistance -R first-last\" -I 500 -num-slots 1 -S 10"
+				},
+				"loadClustererFileName" : "",
+				"name" : "SimpleKMeans"
+			},
+			"connections" : {
+			},
+			"coordinates" : "802,323"
+		}
+
+2.EM
+{
+			"class" : "weka.knowledgeflow.steps.Clusterer",
+			"properties" : {
+				"clusterer" : {
+					"type" : "optionHandler",
+					"class" : "weka.clusterers.EM",
+					"options" : "-I 100 -N -1 -X 10 -max -1 -ll-cv 1.0E-6 -ll-iter 1.0E-6 -M 1.0E-6 -K 10 -num-slots 1 -S 100"
+				},
+				"loadClustererFileName" : "",
+				"name" : "EM"
+			},
+			"connections" : {
+			},
+			"coordinates" : "811,926"
+		}
+
+3.HierarchicalClusterer
+{
+			"class" : "weka.knowledgeflow.steps.Clusterer",
+			"properties" : {
+				"clusterer" : {
+					"type" : "optionHandler",
+					"class" : "weka.clusterers.HierarchicalClusterer",
+					"options" : "-N 2 -L SINGLE -P -A \"weka.core.EuclideanDistance -R first-last\""
+				},
+				"loadClustererFileName" : "",
+				"name" : "HierarchicalClusterer"
+			},
+			"connections" : {
+			},
+			"coordinates" : "794,1028"
+		}

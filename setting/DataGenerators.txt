@@ -1,0 +1,56 @@
+1.Agrawal
+{
+			"class" : "weka.knowledgeflow.steps.DataGenerator",
+			"properties" : {
+				"dataGenerator" : {
+					"type" : "optionHandler",
+					"class" : "weka.datagenerators.classifiers.classification.Agrawal",
+					"options" : "-S 1 -n 100 -F 1 -P 0.05"
+				},
+				"name" : "Agrawal"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner22"
+				]
+			},
+			"coordinates" : "243,798"
+		}
+
+2.LED24
+{
+			"class" : "weka.knowledgeflow.steps.DataGenerator",
+			"properties" : {
+				"dataGenerator" : {
+					"type" : "optionHandler",
+					"class" : "weka.datagenerators.classifiers.classification.LED24",
+					"options" : "-S 1 -n 100 -N 10.0"
+				},
+				"name" : "LED24"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner222"
+				]
+			},
+			"coordinates" : "242,899"
+		}
+
+3.BIRCHCluster
+{
+			"class" : "weka.knowledgeflow.steps.DataGenerator",
+			"properties" : {
+				"dataGenerator" : {
+					"type" : "optionHandler",
+					"class" : "weka.datagenerators.clusterers.BIRCHCluster",
+					"options" : "-S 1 -a 10 -k 4 -N 1..50 -R 0.1..1.41 -O"
+				},
+				"name" : "BIRCHCluster"
+			},
+			"connections" : {
+				"dataSet" : [
+					"ClassAssigner223"
+				]
+			},
+			"coordinates" : "241,1018"
+		}
